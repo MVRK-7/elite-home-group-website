@@ -4,10 +4,10 @@
   --gold: #C7A24A;
   --muted: #55504A;
   --faint: #9a938a;
-  --h-font: 'Manrope', system-ui, sans-serif;
-  --b-font: 'Manrope', system-ui, sans-serif;
-  --h-weight: 700;
-  --h-spacing: -0.02em;
+  --h-font: 'Khand', 'Oswald', system-ui, sans-serif;
+  --b-font: 'General Sans', system-ui, sans-serif;
+  --h-weight: 600;
+  --h-spacing: 0;
 }
 
 * {

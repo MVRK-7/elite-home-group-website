@@ -1,3 +1,4 @@
+import Logo from './Logo';
 import './Footer.css';
 
 export default function Footer() {
@@ -7,9 +8,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div>
-          <a href="#top" className="footer-brand">
-            <span className="footer-brand-dot" />
-            <span className="footer-brand-name">Elite Home Group</span>
+          <a href="#top" className="footer-brand" aria-label="Elite Home Group — home">
+            <Logo className="footer-logo" />
           </a>
           <p className="footer-tagline">
             A boutique real estate team in Kingman, Arizona &mdash; part of Realty ONE

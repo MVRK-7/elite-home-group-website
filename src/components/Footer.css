@@ -14,24 +14,20 @@
 }
 
 .footer-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 11px;
+  color: var(--gold);
+  transition: opacity .3s ease;
 }
 
-.footer-brand-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: inline-block;
+.footer-brand:hover {
+  opacity: .75;
 }
 
-.footer-brand-name {
-  font-weight: 600;
-  letter-spacing: .2em;
-  font-size: 12px;
-  text-transform: uppercase;
+.footer-logo {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .footer-tagline {

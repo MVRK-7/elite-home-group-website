@@ -27,22 +27,18 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  color: var(--ink);
+  transition: opacity .3s ease;
 }
 
-.brand-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: inline-block;
+.brand:hover {
+  opacity: .7;
 }
 
-.brand-name {
-  font-weight: 600;
-  letter-spacing: .2em;
-  font-size: 12px;
-  text-transform: uppercase;
+.brand-logo {
+  display: block;
+  height: 30px;
+  width: auto;
 }
 
 .site-nav {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Logo from './Logo';
 import './Header.css';
 
 const NAV_LINKS = [
@@ -38,9 +39,13 @@ export default function Header() {
 
   return (
     <header ref={navRef} className={`site-header ${menuOpen ? 'menu-open' : ''}`}>
-      <a href="#top" className="brand" onClick={() => setMenuOpen(false)}>
-        <span className="brand-dot" />
-        <span className="brand-name">Elite Home Group</span>
+      <a
+        href="#top"
+        className="brand"
+        aria-label="Elite Home Group — home"
+        onClick={() => setMenuOpen(false)}
+      >
+        <Logo className="brand-logo" />
       </a>
 
       <button
