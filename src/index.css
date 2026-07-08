@@ -1,0 +1,65 @@
+:root {
+  --cream: #F5F2EB;
+  --ink: #14110D;
+  --gold: #C7A24A;
+  --muted: #55504A;
+  --faint: #9a938a;
+  --h-font: 'Manrope', system-ui, sans-serif;
+  --b-font: 'Manrope', system-ui, sans-serif;
+  --h-weight: 700;
+  --h-spacing: -0.02em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--b-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--h-font);
+}
+
+p {
+  margin: 0;
+}
+
+input, textarea, button {
+  font-family: var(--b-font);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}

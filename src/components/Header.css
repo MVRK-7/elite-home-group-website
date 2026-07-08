@@ -1,0 +1,85 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding: 26px clamp(20px, 5vw, 64px);
+  transition: padding .45s cubic-bezier(.16,1,.3,1), background .45s ease, border-color .45s ease;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+}
+
+.site-header.scrolled {
+  background: rgba(245, 242, 235, .82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom-color: rgba(20, 17, 13, .08);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: inline-block;
+}
+
+.brand-name {
+  font-weight: 600;
+  letter-spacing: .2em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.4vw, 34px);
+}
+
+.nav-link {
+  font-size: 13px;
+  letter-spacing: .02em;
+  padding-bottom: 2px;
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .4s cubic-bezier(.16,1,.3,1), color .3s;
+}
+
+.nav-link:hover {
+  background-size: 100% 1px;
+  color: var(--gold);
+}
+
+.nav-cta {
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  transition: background .4s cubic-bezier(.16,1,.3,1), color .4s, transform .4s;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
