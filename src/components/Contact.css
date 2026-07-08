@@ -8,7 +8,7 @@
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
   gap: clamp(40px, 6vw, 96px);
   align-items: start;
 }
@@ -49,6 +49,7 @@
   display: flex;
   gap: 14px;
   align-items: baseline;
+  min-width: 0;
 }
 
 .contact-label {
@@ -58,6 +59,15 @@
   color: var(--gold);
   width: 64px;
   flex: none;
+}
+
+/* The value (email/website/address) must be allowed to shrink and wrap —
+   long unbreakable strings like the email otherwise force horizontal
+   overflow on narrow phones. */
+.contact-row a,
+.contact-row > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .contact-row a {
@@ -153,7 +163,7 @@
 
 .contact-field-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
   gap: 22px;
 }
 
