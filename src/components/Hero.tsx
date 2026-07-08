@@ -150,14 +150,28 @@ export default function Hero() {
       }
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // Mobile momentum scrolling can fire dozens of scroll events per frame —
+    // without this, onScroll's trig + style writes for 18 cards run once per
+    // event instead of once per paint, which is what made this feel clunky
+    // on phones. Coalesce to a single rAF-scheduled update per frame.
+    let ticking = false;
+    const onScrollThrottled = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+    };
+
+    window.addEventListener('scroll', onScrollThrottled, { passive: true });
     window.addEventListener('resize', onResize);
     onScroll();
 
     return () => {
       cancelAnimationFrame(raf1);
       clearTimeout(introTimer);
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', onScrollThrottled);
       window.removeEventListener('resize', onResize);
     };
   }, []);
