@@ -51,10 +51,6 @@ export default function Contact() {
                 MyEliteHomeGroup.com
               </a>
             </div>
-            <div className="contact-row">
-              <span className="contact-label">Hours</span>
-              <span>Always open</span>
-            </div>
           </div>
         </div>
 
